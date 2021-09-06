@@ -20,6 +20,7 @@ Datastrukturen array är en effektiv variant av en lista, men den har vissa begr
 -   Attribut: En array (och ev andra attribut som du vill ha med).
     Alla attribut ska vara privata (inledas med understrykningstecken _).
 
+****    LÄNK: https://www.w3schools.com/python/python_arrays.asp    ****
 
 2. Testa ArrayQ
 Prova din kö med följande testprogram:
