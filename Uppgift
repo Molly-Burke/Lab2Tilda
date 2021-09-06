@@ -1,0 +1,112 @@
+I denna labb ska du implementera en kö på två olika sätt.
+Med den abstrakta datastrukturen kö kan man göra dessa saker:
+
+Queue()             # skapa en tom kö
+enqueue(x)          # stoppa in något sist i kön
+x = dequeue()       # plocka ut det som står först i kön
+isEmpty()           # kolla om kön är tom
+n = size()          # antalet element i kön
+
+1. ArrayQ - en kö med Pythons array
+I första uppgiften ska du skriva en egen klass ArrayQ där du implementerar en kö med hjälp av pythons array
+Datastrukturen array är en effektiv variant av en lista, men den har vissa begränsningar.
+
+-   Börja med att importera modulen array med from array import array
+-   Bestäm vilken typ av data du vill lagra.
+-   Skapa en array och experimentera med array-metoderna append, insert, remove och pop.
+    Rita bilder som illustrerar vad metoderna gör.
+    Vilka vill du använda i din enqueue respektive dequeue?
+-   Nu är du redo att skriva din egen klass ArrayQ.
+-   Attribut: En array (och ev andra attribut som du vill ha med).
+    Alla attribut ska vara privata (inledas med understrykningstecken _).
+
+
+2. Testa ArrayQ
+Prova din kö med följande testprogram:
+
+-----------------------
+q = ArrayQ()
+q.enqueue(1)
+q.enqueue(2)
+x = q.dequeue()
+y = q.dequeue()
+if (x == 1 and y == 2):
+    print("OK")
+else:
+    print("FAILED")
+-------------------------
+
+
+3. Skriv Trollkarlsprogrammet
+Skriv ett program som simulerar korttricket (se videon och exemplet överst i labben).
+Inmatningstips är att använda input() för att läsa in hela raden,
+använda split() för att dela upp den och int() för att konvertera till heltal.
+Experimentera sedan med olika inmatade ordningar och
+se om du kan lista ut i vilken ordning korten ska ligga innan
+man börjar trolla för att man ska få ut alla tretton i rätt ordning.
+
+
+4. Skapa en ArrayQ-modul
+Gör nu så här: klipp ut klassen från ditt program och klistra in i en ny fil arrayQFile.py
+Importera klassen till huvudprogrammet med raden from arrayQFile import ArrayQ
+Nu går det att använda klassen utan att den syns i programmet.
+
+Tips: Använd if-satsen
+-------------------------------
+if __name__ == "__main__":
+-------------------------------
+i din modul för att inte köra eventuell kod, t.ex. testkod i ArrayQ
+
+
+5. LinkedQ - en kö av noder (länkad lista)
+Nu ska du istället implementera kön som en länkad lista.
+Då behövs två nya klasser: Node och LinkedQ.
+Skriv in bägge klasserna i samma fil: linkedQFile.py.
+Noderna i listan är objekt som vardera innehåller två attribut:
+-   ett värde (value)
+-   en referens till nästa objekt (next).
+Dessa två attribut behöver inte vara privata.
+
+Själva LinkedQ-klassen ska ha två privata attribut:
+-   first som håller reda på den första noden i kön
+-   last som pekar ut den sista.
+Använd samma gränssnitt som i uppgift 1, med enqueue, dequeue osv.
+
+Det är extra knepigt att programmera enqueue(x) eftersom det blir två fall,
+beroende på om kön är tom eller inte. Rita upp bägge fallen (lådor med pilar) innan du skriver koden.
+
+
+6. Testa LinkedQ
+Prova din kö med följande testprogram (som använder Pythons unittest)
+---------------------------------------------------------------------
+import unittest
+from linkedQFile import LinkedQ
+
+class TestQueue(unittest.TestCase):
+
+    def test_isEmpty(self):
+        #isEmpty ska returnera True för tom kö, False annars
+        q = LinkedQ()
+        self.assertTrue(q.isEmpty(), "isEmpty på tom kö")
+        q.enqueue(17)
+        self.assertFalse(q.isEmpty(), "isEmpty på icke-tom kö")
+
+    def test_order(self):
+        #Kontrollerar att kö-ordningen blir rätt
+        q = LinkedQ()
+        q.enqueue(1)
+        q.enqueue(2)
+        q.enqueue(3)
+        self.assertEqual(q.dequeue(), 1)
+        self.assertEqual(q.dequeue(), 2)
+        self.assertEqual(q.dequeue(), 3)
+
+if __name__ == "__main__":
+    unittest.main()
+---------------------------------------------------------------------
+
+
+7. Trollkarlsprogrammet med LinkedQ
+Ändra import-satsen i trollkarlsprogrammet så att du importerar klassen LinkedQ istället för ArrayQ.
+Provkör. Fungerade det?
+Då har du lyckats implementera den abstrakta datastrukturen kö på två olika sätt.
