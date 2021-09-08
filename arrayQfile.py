@@ -26,3 +26,6 @@ class ArrayQ:
     def size(self):
         return len(self._newq)
 
+    # ta bort x från array
+    def remove(self,x):
+        self._newq.remove(x)
