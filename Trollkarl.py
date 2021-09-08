@@ -24,9 +24,10 @@ class Trollkarl:
         while len(array) > 0:
             x = array.pop(0)
             array.append(x)
-            outarray.append(array.pop())
+            outarray.append(array.pop(0))
 
         print(outarray.__str__())
+
 
 
 def main():
