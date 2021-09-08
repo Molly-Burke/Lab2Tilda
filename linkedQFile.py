@@ -6,8 +6,8 @@ class Node:
 
 class LinkedQ:
     def __init__(self):
-        self._first: Node() = None
-        self._last : Node() = None
+        self._first = None
+        self._last = None
         self._size = 0
 
     def enqueue(self, newNodeValue):
@@ -63,7 +63,7 @@ class LinkedQ:
 
 
     def __str__(self):
-        temp = "The Linked List is: ["
+        temp = "["
         p = self._first
 
         while p.next is not None:
@@ -71,15 +71,3 @@ class LinkedQ:
             p = p.next
         temp = temp + str(p.value) + "]"
         return temp
-
-def main():
-    q = LinkedQ()
-    q.enqueue(1)
-    q.enqueue(2)
-    q.enqueue(3)
-    q.enqueue(4)
-    q.enqueue(1)
-    q.remove(2)
-    print(q)
-
-main()
