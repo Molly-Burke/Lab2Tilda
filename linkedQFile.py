@@ -29,7 +29,15 @@ class LinkedQ:
         return p.value
 
     def size(self):
-        return self._size
+        if self._first is None:
+            return 0
+        else:
+            p = self._first
+            count = 1
+            while p.next is not None:
+                count += 1
+                p = p.next
+            return count
 
     def isEmpty(self):
         if self._first is None:
@@ -37,7 +45,7 @@ class LinkedQ:
         else:
             return False
 
-    #söka efter x och ta bort den från linked lista
+    # söka efter x och ta bort den från linked lista
     def remove(self, x):
         p = self._first
         # här kollar man om first node är den node som man söka efter
@@ -46,8 +54,8 @@ class LinkedQ:
             self._size -= 1
         else:
             # här kollar vi om det är sista noden som vi letar efter
-            if x == self._last.value:
-                while not p.next == self._last:
+            if x is self._last.value:
+                while p.next is not self._last:
                     p = p.next
                 p.next = None
                 self._last = p
@@ -59,8 +67,6 @@ class LinkedQ:
                         p.next = p.next.next
                         self._size -= 1
                     p = p.next
-
-
 
     def __str__(self):
         temp = "["
