@@ -1,5 +1,5 @@
 from array import array
-#from ArrayQ import ArrayQ
+from arrayQfile import ArrayQ
 
 test_array = array('i', [8, 45, 33, 90, 67, 28, 3])
 
@@ -28,10 +28,11 @@ print(len(test_array))
 print("\n\n\n")
 
 
-"""
 q = ArrayQ()
 q.enqueue(1)
 q.enqueue(2)
+q.enqueue(3)
+
 print(q.size())
 x = q.dequeue()
 print("x =", x)
@@ -39,7 +40,9 @@ y = q.dequeue()
 print("Y =", y)
 print(q.size())
 
+
 if x == 1 and y == 2:
     print("OK")
 else:
     print("FAILED")
+

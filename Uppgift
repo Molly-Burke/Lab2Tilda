@@ -37,8 +37,6 @@ else:
     print("FAILED")
 -------------------------
 
-###  --- 06/09 ---  ###
-
 3. Skriv Trollkarlsprogrammet
 Skriv ett program som simulerar korttricket (se videon och exemplet överst i labben).
 Inmatningstips är att använda input() för att läsa in hela raden,
@@ -47,6 +45,7 @@ Experimentera sedan med olika inmatade ordningar och
 se om du kan lista ut i vilken ordning korten ska ligga innan
 man börjar trolla för att man ska få ut alla tretton i rätt ordning.
 
+###  --- 07/09 ---  ###
 
 4. Skapa en ArrayQ-modul
 Gör nu så här: klipp ut klassen från ditt program och klistra in i en ny fil arrayQFile.py

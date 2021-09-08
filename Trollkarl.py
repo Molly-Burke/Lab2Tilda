@@ -22,7 +22,7 @@ class Trollkarl:
 
         outarray = []
         while len(array) > 0:
-            x = array.pop()
+            x = array.pop(0)
             array.append(x)
             outarray.append(array.pop())
 
@@ -30,8 +30,25 @@ class Trollkarl:
 
 
 def main():
-    t = Trollkarl()
-    t.korttrick()
+    #t = Trollkarl()
+    #t.korttrick()
+
+    q = LinkedQ()
+    q.enqueue(1)
+    q.enqueue(2)
+    q.enqueue(3)
+
+    print(q.size())
+    x = q.dequeue()
+    print("x =", x)
+    y = q.dequeue()
+    print("Y =", y)
+    print(q.size())
+
+    if x == 1 and y == 2:
+        print("OK")
+    else:
+        print("FAILED")
 
 
 main()
