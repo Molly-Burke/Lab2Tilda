@@ -69,11 +69,10 @@ class LinkedQ:
                     p = p.next
 
     def __str__(self):
-        temp = "["
         p = self._first
 
         while p.next is not None:
-            temp += str(p.value) + ", "
+            temp += p.value + " "
             p = p.next
-        temp = temp + str(p.value) + "]"
+        temp = temp + p.value
         return temp

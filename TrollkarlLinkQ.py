@@ -7,7 +7,7 @@ class Trollkarl:
         self.card_numbers = LinkedQ()
 
     def input_numbers(self):
-        datarad = input("Vilken ordning ligger korten i? ")
+        datarad = input()
         uppdelad = datarad.split(" ")
         for item in uppdelad:
             self.card_numbers.enqueue(item)

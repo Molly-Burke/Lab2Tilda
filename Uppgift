@@ -111,3 +111,26 @@ if __name__ == "__main__":
 Ändra import-satsen i trollkarlsprogrammet så att du importerar klassen LinkedQ istället för ArrayQ.
 Provkör. Fungerade det?
 Då har du lyckats implementera den abstrakta datastrukturen kö på två olika sätt.
+
+
+    # söka efter x och ta bort den från linked lista
+    def remove(self, x):
+        p = self._first
+        # här kollar man om first node är den node som man söka efter
+        if x == p.value:
+            self._first = p.next
+
+        else:
+            # här kollar vi om det är sista noden som vi letar efter
+            if x is self._last.value:
+                while p.next is not self._last:
+                    p = p.next
+                p.next = None
+                self._last = p
+
+                # annars kollar man om x finns i andra noder
+            else:
+                while p.next is not None:
+                    if x == p.next.value:
+                        p.next = p.next.next
+                    p = p.next
